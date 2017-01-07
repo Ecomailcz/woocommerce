@@ -1,0 +1,19 @@
+{
+  "name": "ecomail/wordpress",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require": {
+  },
+  "autoload": {
+    "psr-4": {
+      "Ecomail\\": [
+        "src/"
+      ]
+    }
+  },
+  "authors": [
+    {
+      "name": "Ecomail.cz s.r.o."
+    }
+  ]
+}
