@@ -4,6 +4,8 @@ namespace Ecomail;
 
 use EcomailPlugin;
 
+require_once 'Api.php';
+
 class Helper
 {
 
