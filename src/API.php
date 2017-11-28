@@ -31,7 +31,11 @@ class API
             ),
             'POST',
             array(
-                'subscriber_data' => $customerData
+                'subscriber_data' => $customerData,
+                'trigger_autoresponders' => true,
+                'update_existing' => true,
+                'resubscribe' => true,
+                'source' => 'woo_plugin'
             )
         );
 
