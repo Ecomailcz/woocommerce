@@ -226,6 +226,18 @@ HTML;
             $shopUrl = get_site_url();
         }
 
+        $r = $helper->getApi()
+            ->subscribeToList($helper->getConfigValue('list_id'), [
+                'email' => $order->billing_email,
+                'city' => $order->shipping_city ? $order->shipping_city : $order->billing_city,
+                'country' => $order->shipping_country ? $order->shipping_country : $order->billing_country,
+                'zip' => $order->shipping_postcode ? $order->shipping_postcode : $order->billing_postcode,
+                'phone' => $order->billing_phone,
+                'name' => $order->shipping_first_name ? $order->shipping_first_name : $order->billing_first_name,
+                'surname' => $order->shipping_last_name ? $order->shipping_last_name : $order->billing_last_name,
+                'company' => $order->shipping_company ? $order->shipping_company : $order->billing_company
+        ]);
+
         $data = array(
             'transaction' => array(
                 'order_id' => $order->id,
